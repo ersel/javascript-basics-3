@@ -1,61 +1,59 @@
 const getNthElement = (index, array) => {
-  // your code here
+  if (index >= array.length)
+    { 
+      return array[index -array.length];
+    }
+ 
+      return array[index];
+  
 };
 
 const arrayToCSVString = (array) => {
-  // your code here
+  return array.join();
 };
 
 const csvStringToArray = (string) => {
-  // your code here
+  return string.split(',');
 };
 
-const addToArray = (element, array) => {
-  // your code here
+const addToArray = (element, array) => { array.push(element) };
+
+const addToArray2 = (element, array) =>  array.concat(element);
+
+const removeNthElement = (index, array) =>  array.splice(index, 1);
+   
+
+const numbersToStrings = (numbers) => numbers.map(num => String(num));
+
+const uppercaseWordsInArray = (strings) =>  strings.map(element => element.toUpperCase());
+
+const reverseWordsInArray = (strings) => 
+{
+  const reverseString = (word) => word.split("").reverse().join('');
+  return strings.map(word => reverseString(word));
 };
 
-const addToArray2 = (element, array) => {
-  // your code here
-};
 
-const removeNthElement = (index, array) => {
-  // your code here
-};
+const onlyEven = (numbers) =>  numbers.filter(num => num % 2 === 0);
 
-const numbersToStrings = (numbers) => {
-  // your code here
-};
+const removeNthElement2 = (index, array) =>    array.slice(0,2).concat(array.slice(3));
 
-const uppercaseWordsInArray = (strings) => {
-  // your code here
-};
-
-const reverseWordsInArray = (strings) => {
-  // your code here
-};
-
-const onlyEven = (numbers) => {
-  // your code here
-};
-
-const removeNthElement2 = (index, array) => {
-  // your code here
-};
 
 const elementsStartingWithAVowel = (strings) => {
-  // your code here
+  const regex = /^[aeiou].*/i
+   return strings.filter(elem => regex.test(elem))
 };
 
 const removeSpaces = (string) => {
-  // your code here
+  return string.split(' ').join("");
 };
 
 const sumNumbers = (numbers) => {
-  // your code here
+  return numbers.reduce((total, num) => total + num );
 };
 
 const sortByLastLetter = (strings) => {
-  // your code here
+  return strings.sort((wordA, wordB) => wordA.charAt(wordA.length -1) - wordA.charAt(wordA.length -1))
 };
 
 module.exports = {
